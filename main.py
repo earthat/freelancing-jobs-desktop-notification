@@ -50,7 +50,7 @@ if __name__ == '__main__':
 
     # credentials for freelancer developer API
     url = "https://www.freelancer.com/api/projects/0.1/projects/active/"
-    oauth_headers = {"Freelancer-OAuth-V1": "iM23e6yOXq7qf4Bqhj4NrLgUsMRDYp"}
+    oauth_headers = {"Freelancer-OAuth-V1": "XXXXXXXXXXXXXXXXXXXX"}
     para = {
         'query': ['python'],
         # 'query':'Matlab',
