@@ -1,7 +1,8 @@
 
 # Get notiification on ubuntu
 
-![desktop notification on ubuntu for freealncing projects](https://github.com/earthat/freelancing-jobs-desktop-notification/tree/master/Ubuntu/images/desktop notification on ubuntu for freealncing projects.png)
+![desktop notification on ubuntu for freealncing projects](https://github.com/earthat/freelancing-jobs-desktop-notification/Ubuntu/images/desktop notification on ubuntu for freealncing projects.png)
+
 
 Like the desktop notification for freelancing projects on Windows, here is the mian.py file for Linux. Install following repsoitories first:
 
