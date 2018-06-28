@@ -1,7 +1,7 @@
 
 # Get notiification on ubuntu
 
-![desktop notification on ubuntu for freealncing projects](/images/desktop notification on ubuntu for freealncing projects.png)
+![desktop notification on ubuntu for freealncing projects](Ubuntu/images/desktop notification on ubuntu for freealncing projects.png)
 
 Like the desktop notification for freelancing projects on Windows, here is the mian.py file for Linux. Install following repsoitories first:
 
