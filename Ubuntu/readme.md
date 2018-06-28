@@ -1,8 +1,7 @@
 
 # Get notiification on ubuntu
 
-![GitHub Logo](/images/desktop notification on ubuntu for freealncing projects.png)
-Format: ![Alt Text](url)
+![desktop notification on ubuntu for freealncing projects](/images/desktop notification on ubuntu for freealncing projects.png)
 
 Like the desktop notification for freelancing projects on Windows, here is the mian.py file for Linux. Install following repsoitories first:
 
