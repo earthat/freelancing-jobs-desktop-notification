@@ -50,12 +50,14 @@ if __name__ == '__main__':
 
     # credentials for freelancer developer API
     url = "https://www.freelancer.com/api/projects/0.1/projects/active/"
-    oauth_headers = {"Freelancer-OAuth-V1": "XXXXXXXXXXXXXXXXXXXX"}
+    oauth_headers = {"Freelancer-OAuth-V1": "XXXXXXXXXXXXXXXXXX"}
     para = {
-        'query': ['python'],
+        'query': ['Matlab, python, machine learning'],
         # 'query':'Matlab',
         'sort_field': 'time_updated',
-        'limit': 10}
+        'limit': 20,
+        'or_search_query': True
+    }
 
     # put the API call in threading
     t = MyThread(args=(url,), kwargs={'oauth_headers': oauth_headers, 'para': para})
@@ -72,15 +74,28 @@ if __name__ == '__main__':
         t = MyThread(args=(url,), kwargs={'oauth_headers':oauth_headers, 'para':para})
         t.start()
         op1=t.join()
+        if not op1:
+            time.sleep(600)
+            t.start()
+            op1 = t.join()
         print(op1[0]['title'])
         for i in range(0, len(op1)):
             storeJobs[i] = [op1[i]['title']]
 
 
-        notshared_items = {k: storeJobs[k] for k in storeJobs if k in prevJobs and storeJobs[k] != prevJobs[k]}
+        notshared_items = {}
+        for (k, jobs) in enumerate(list(storeJobs.values())):
+            cnt = 0
+            for j in range(len(prevJobs)):
+                if storeJobs[k][0] != prevJobs[j][0]:
+                    cnt = cnt + 1
+            if (cnt + 1) != len(prevJobs):
+                notshared_items[k] = jobs
+
         if list(notshared_items.keys()):
             # showNotification(op1[list(notshared_items.keys())[0]])
-
-            op2 = op1[0:len(list(notshared_items.keys()))]
+            keys=list(notshared_items.keys())
+            #op2 = op1[keys[0]:keys[len(keys)-1]+1]
+            op2=[op1[x] for x in keys]
             notification(op2)  # desktop notification function called
         prevJobs = storeJobs
